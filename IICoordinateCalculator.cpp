@@ -8,14 +8,22 @@ int main()
 		int howitzerX, howitzerY, howitzerZ;
 		int targetX, targetY, targetZ;
 
-		std::print("Welcome to the Immersive Intelligence Coordinate Calculator!\n");
-		std::print("This nifty tool will help with calculating the absolute coordinates needed for the ballistic computer!\n");
-		std::print("Enter Artillery Howitzer bottom center coordinates:\n");
-		std::print("DO NOT USE COMMAS! Format: X Y Z\n");
-		std::cin >> howitzerX >> howitzerY >> howitzerZ;
-		std::print("Enter Target coordinates:\n");
-		std::print("DO NOT USE COMMAS! Format: X Y Z\n");
-		std::cin >> targetX >> targetY >> targetZ;
+		std::print("Welcome to the Immersive Intelligence Coordinate Calculator!\n"
+			"This nifty tool will help with calculating the absolute coordinates needed for the ballistic computer!\n"
+			"Enter Artillery Howitzer bottom center coordinates:\n"
+			"DO NOT USE COMMAS! Format: X Y Z\n");
+		if (!(std::cin >> howitzerX >> howitzerY >> howitzerZ))
+		{
+			std::print("Invalid coordinates.\n");
+			return 1;
+		}
+		std::print("Enter Target coordinates:\n"
+			"DO NOT USE COMMAS! Format: X Y Z\n");
+		if (!(std::cin >> targetX >> targetY >> targetZ))
+		{
+			std::print("Invalid coordinates.\n");
+			return 1;
+		}
 
 		int relativeX = targetX - howitzerX;
 		int relativeY = targetY - howitzerY;
